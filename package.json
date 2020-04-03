@@ -1,0 +1,23 @@
+{
+  "name": "sendit",
+  "version": "1.0.0",
+  "description": "courier delivery services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdahMilly/sendIT.git"
+  },
+  "author": "mildred",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdahMilly/sendIT/issues"
+  },
+  "homepage": "https://github.com/AdahMilly/sendIT#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "express": "^4.17.1"
+  }
+}
