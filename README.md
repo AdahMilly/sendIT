@@ -31,7 +31,7 @@ The following endpoints should be available for use once the API is complete.
 | PUT      /parcels/parcelId/cancel         | Cancel the specific parcel delivery order                |
 | POST      /parcels     | Create a parcel delivery order                   |
 
-** NB: **
+**NB:**
 
   -  The user can only cancel or change the destination of a parcel delivery when the parcel’s status is yet to be marked as delivered.
   -  Only the user who created the parcel delivery order can cancel the order.
@@ -45,11 +45,11 @@ The following endpoints should be available for use once the API is complete.
 
 [Sequelize](http://docs.sequelizejs.com/) ORM
 
-[Javascript] language
+[Javascript](https://en.wikipedia.org/wiki/JavaScript) language
 
-[HTML]
+[HTML](https://en.wikipedia.org/wiki/HTML) 
 
-[CSS]
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 
 
 ### Contributing to the application
