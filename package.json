@@ -4,7 +4,8 @@
   "description": "courier delivery services",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node app/server.js",
+    "start:dev": "env-cmd -e development nodemon --exec  babel-node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,16 @@
   },
   "homepage": "https://github.com/AdahMilly/sendIT#readme",
   "dependencies": {
-    "chalk": "^4.0.0",
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "knex": "^0.21.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
