@@ -1,4 +1,4 @@
-import joi from "@hapi/joi";
+const joi = require("@hapi/joi");
 
 const envVarsSchema = joi
 	.object({
