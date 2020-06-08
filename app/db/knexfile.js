@@ -1,24 +1,30 @@
-const path = require("path");
+import path from "path";
 
-modules.export = {
-	development: {
-		client: "pg",
-		connection: `postgres://${username}:${password}@${host}/${name}`,
-		migrations: {
-			directory: __dirname + "/db/migrtions",
-		},
-		seeds: {
-			directory: __dirname + "/db/seeds",
-		},
-	},
-	production: {
-		client: "pg",
-		connection: "process.env.DATABASE_URL",
-		migrations: {
-			directory: __dirname + "/db/migrtions",
-		},
-		seeds: {
-			directory: __dirname + "/db/seeds",
-		},
+import { getConfig } from "../config";
+
+const {
+	env,
+	db: { name, username, password, host },
+} = getConfig();
+
+const defaultOptions = {
+	client: "pg",
+	connection: `postgresql://${username}:${password}@${host}/${name}`,
+	migrations: {
+		directory: path.join(__dirname, "migrations"),
 	},
 };
+
+const configs = {
+	development: defaultOptions,
+	staging: defaultOptions,
+	production: defaultOptions,
+	local: defaultOptions,
+	test: defaultOptions,
+};
+
+if (configs[env] === undefined) {
+	throw Error(`Missing configuration for environment: ${env}`);
+}
+
+module.exports = configs;

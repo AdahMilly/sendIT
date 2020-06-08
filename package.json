@@ -1,41 +1,43 @@
 {
-  "name": "sendit",
-  "version": "1.0.0",
-  "description": "courier delivery services",
-  "main": "server.js",
-  "scripts": {
-    "start": "env-cmd -e development babel-node server.js",
-    "start:dev": "env-cmd -e development nodemon --exec  babel-node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AdahMilly/sendIT.git"
-  },
-  "author": "mildred",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AdahMilly/sendIT/issues"
-  },
-  "homepage": "https://github.com/AdahMilly/sendIT#readme",
-  "dependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/node": "^7.10.1",
-    "@babel/plugin-transform-regenerator": "^7.10.1",
-    "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/runtime": "^7.10.2",
-    "@hapi/joi": "^17.1.1",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "env-cmd": "^10.1.0",
-    "express": "^4.17.1",
-    "fancy-log": "^1.3.3",
-    "jade": "^1.11.0",
-    "knex": "^0.21.1",
-    "morgan": "^1.10.0",
-    "pg": "^8.2.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+	"name": "sendit",
+	"version": "1.0.0",
+	"description": "courier delivery services",
+	"main": "server.js",
+	"scripts": {
+		"start": "env-cmd -e development babel-node server.js",
+		"start:dev": "env-cmd -e development nodemon --exec  babel-node server.js",
+		"db:migrate:make": "env-cmd -e development  babel-node $(npm bin)/knex migrate:make --knexfile ./app/db/knexfile.js",
+		"db:migrate": "env-cmd -e development  babel-node $(npm bin)/knex migrate:latest --knexfile ./app/db/knexfile.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AdahMilly/sendIT.git"
+	},
+	"author": "mildred",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/AdahMilly/sendIT/issues"
+	},
+	"homepage": "https://github.com/AdahMilly/sendIT#readme",
+	"dependencies": {
+		"@babel/core": "^7.10.2",
+		"@babel/node": "^7.10.1",
+		"@babel/plugin-transform-regenerator": "^7.10.1",
+		"@babel/plugin-transform-runtime": "^7.10.1",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/runtime": "^7.10.2",
+		"@hapi/joi": "^17.1.1",
+		"body-parser": "^1.19.0",
+		"cookie-parser": "^1.4.5",
+		"env-cmd": "^10.1.0",
+		"express": "^4.17.1",
+		"fancy-log": "^1.3.3",
+		"jade": "^1.11.0",
+		"knex": "^0.21.1",
+		"morgan": "^1.10.0",
+		"pg": "^8.2.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
 }
